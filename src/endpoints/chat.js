@@ -1,0 +1,11 @@
+export const START_CHAT = "chat/start-chat";
+export const GET_CHAT_LIST = "chat/chat-list";
+export const GET_USER_SUPPORT_LIST = "chat/user-support-list";
+export const GENERATE_STREAM_TOKEN = "chat/generate-stream-token";
+export const SEND_VOICE_MESSAGE = "chat/add-audio-message";
+export const SEND_MESSAGE = "chat/add-message";
+export const GET_MESSAGES = "chat/get-messages";
+export const MARK_ALL_MESSAGES_READ = "chat/mark-messages-read";
+export const CHAT_SUMMARY = "chat/summary";
+export const CHAT_SUGGESTIONS = "chat/chat-suggestions";
+export const UNSEND_MESSAGE = "chat/unsend-message";
