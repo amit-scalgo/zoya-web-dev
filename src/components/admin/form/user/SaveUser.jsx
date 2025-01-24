@@ -9,7 +9,7 @@ import { forwardRef, useEffect, useState } from 'react';
 import { useQuery, useQueryClient } from '@tanstack/react-query';
 import { newFormRequest, newRequest } from '@/endpoints';
 import { userSchema } from '@/schema/user.schema';
-import { ADMIN_SUPPORT_LIST } from '@/endpoints/admin';
+import { ADMIN_SUPPORT_LIST_ALL } from '@/endpoints/admin';
 import {
     Select,
     SelectContent,
@@ -38,7 +38,7 @@ export default function SaveUserForm({
         useState(null);
     const enableTerm = api ? true : false;
     const { data: supportMembers } = useGetData(
-        ADMIN_SUPPORT_LIST,
+        ADMIN_SUPPORT_LIST_ALL,
         'adminSupportList',
         enableTerm
     );
