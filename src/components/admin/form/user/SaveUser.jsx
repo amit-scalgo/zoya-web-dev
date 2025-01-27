@@ -22,6 +22,7 @@ import {
 import useGetData from '@/hooks/useGetData';
 import Loader from '@/components/ui/Loader';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { useSocket } from '@/lib/store/socket.store';
 
 export default function SaveUserForm({
     api,
@@ -31,6 +32,7 @@ export default function SaveUserForm({
     setSelectedId,
     setIsOpen,
 }) {
+    const socket = useSocket();
     const navigate = useNavigate();
     const { pathname } = useLocation();
 
@@ -123,6 +125,12 @@ export default function SaveUserForm({
                 ? await newFormRequest.patch(`${api}/${selectedId}`, formData)
                 : await newFormRequest.post(api, formData);
             if (res.status === 201 || res.status === 200) {
+                if (res?.data?.supportChanged == true) {
+                    socket.emit('support-changed', {
+                        user: selectedId,
+                        support: dedicatedSupportUserId,
+                    });
+                }
                 toast.success(res.data.message);
                 queryClient.invalidateQueries([queryKey]);
                 reset();
