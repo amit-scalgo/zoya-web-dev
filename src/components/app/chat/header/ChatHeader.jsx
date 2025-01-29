@@ -98,7 +98,7 @@ export default function ChatHeader() {
                             >
                                 Suggestions <BrainCircuit />
                             </Button>
-                            {/* <SelectChatSummary /> */}
+                            <SelectChatSummary />
                         </div>
                     )}
                     <div
