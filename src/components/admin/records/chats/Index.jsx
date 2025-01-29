@@ -98,25 +98,27 @@ export default function ChatRecordListing() {
             cell: ({ row }) => {
                 return (
                     <span className="line-clamp-1 max-w-xs">
-                        {row.original?.lastMessage
-                            ? row.original?.lastMessage?.includes('recordings')
+                        {row.original?.lastMessage?.message
+                            ? row.original?.lastMessage?.message?.includes(
+                                  'recordings'
+                              )
                                 ? 'Voice message'
-                                : row.original?.lastMessage?.includes(
+                                : row.original?.lastMessage?.message?.includes(
                                         'cloudinary'
                                     )
                                   ? 'Image'
-                                  : row.original?.lastMessage
+                                  : row.original?.lastMessage?.message
                             : 'No messages yet'}
                     </span>
                 );
             },
         },
         {
-            accessorKey: 'createdAt',
+            accessorKey: 'lastMessageTime',
             header: 'Created On',
             cell: ({ row }) => {
-                const date = new Date(row.getValue('createdAt'));
-                return <span>{dayjs(date).fromNow()}</span>;
+                const date = row.original?.lastMessage?.createdAt;
+                return <span>{date && dayjs(date).fromNow()}</span>;
             },
         },
         {

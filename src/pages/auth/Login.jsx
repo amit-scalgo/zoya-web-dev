@@ -52,7 +52,7 @@ export default function Login() {
             console.log(error);
             setLoader(false);
             toast.error(error?.response?.data?.message);
-            reset();
+            // reset();
         }
     };
 
