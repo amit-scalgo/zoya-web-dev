@@ -60,7 +60,7 @@ export function ViewCallDetail({
                             {selectedCallDetail?.user?.name ?? 'DU'}
                         </div>
                     </div>
-                    <div className="flex items-center gap-2">
+                    {/* <div className="flex items-center gap-2">
                         <div className="text-[0.94rem] font-semibold">
                             Call Duration:
                         </div>
@@ -69,7 +69,7 @@ export function ViewCallDetail({
                                 ? 'N/A'
                                 : selectedCallDetail?.duration}
                         </div>
-                    </div>
+                    </div> */}
                     <div className="flex items-center gap-2">
                         <div className="text-[0.94rem] font-semibold">
                             Call Recorded:
