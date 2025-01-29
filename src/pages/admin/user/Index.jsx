@@ -142,14 +142,14 @@ export default function UserListing() {
                             Edit
                         </DropdownMenuItem>
                         {/* <DropdownMenuItem>View</DropdownMenuItem> */}
-                        <DropdownMenuItem
+                        {/* <DropdownMenuItem
                             onClick={() => {
                                 setSelectedId(row.original?._id);
                                 setOpenDeletePopup(true);
                             }}
                         >
                             Delete
-                        </DropdownMenuItem>
+                        </DropdownMenuItem> */}
                     </DropdownMenuContent>
                 </DropdownMenu>
             ),
