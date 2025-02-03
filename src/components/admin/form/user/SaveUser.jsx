@@ -337,6 +337,7 @@ export default function SaveUserForm({
                         </Button>
                         <Button
                             type="submit"
+                            disabled={loader}
                             className="h-10 min-w-32 max-w-32 font-bold"
                         >
                             {loader ? (
